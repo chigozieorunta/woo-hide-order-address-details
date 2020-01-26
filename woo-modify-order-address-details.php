@@ -26,7 +26,7 @@ class wooModifyOrderAddressDetails {
 	 * @since  1.0.0
 	 */
     public function __construct() {
-        add_action('wp_enqueue_scripts', array(get_called_class(), 'registerScripts'));
+        add_action('admin_enqueue_scripts', array(get_called_class(), 'registerScripts'));
     }
 
     /**
@@ -36,10 +36,8 @@ class wooModifyOrderAddressDetails {
 	 * @since  1.0.0
 	 */
     public static function registerScripts() {
-        if(!is_admin()) {
-            wp_register_style('woo-modify-order-address-details', plugin_dir_url(__FILE__).'css/woo-modify-order-address-details.css');
-            wp_enqueue_style('woo-modify-order-address-details');
-        }
+		wp_register_style('woo-modify-order-address-details', plugin_dir_url(__FILE__).'css/woo-modify-order-address-details.css');
+		wp_enqueue_style('woo-modify-order-address-details');
     }
 
     /**
