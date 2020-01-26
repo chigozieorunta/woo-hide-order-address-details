@@ -1,2 +1,2 @@
-# woo-modify-order-details
-A simple woocommerce plugin designed to help modify the displayed address information on each order.
+# woo-hide-order-details
+A simple woocommerce plugin designed to help hide the displayed address information on each order.
