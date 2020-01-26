@@ -26,7 +26,10 @@ class wooHideOrderAddressDetails {
 	 * @since  1.0.0
 	 */
     public function __construct() {
-        add_action('admin_enqueue_scripts', array(get_called_class(), 'registerScripts'));
+		$user = wp_get_current_user();
+		if(isset($user->roles[0]) && $user->roles[0] == 'vendor') {
+			add_action('admin_enqueue_scripts', array(get_called_class(), 'registerScripts'));
+		}
     }
 
     /**
